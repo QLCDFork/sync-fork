@@ -1,0 +1,22 @@
+name: Sync Fork For SnapKit
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      -master
+  schedule:
+    - cron: 0 3 */1 * * # 每天凌晨3点执行
+
+jobs:
+  update_fork:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: TobKed/github-forks-sync-action@master
+        with:
+          github_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+          upstream_repository: SnapKit/SnapKit
+          target_repository: QLCDFork/SnapKit
+          upstream_branch: develop
+          target_branch: develop
+          force: true
+          tags: true
