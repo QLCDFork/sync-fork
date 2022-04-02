@@ -1,0 +1,22 @@
+name: Sync Fork For Kingfisher
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      -master
+  schedule:
+    - cron: 0 3 */1 * * # 每天凌晨3点执行
+
+jobs:
+  update_fork:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: TobKed/github-forks-sync-action@master
+        with:
+          github_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+          upstream_repository: onevcat/Kingfisher
+          target_repository: QLCDFork/Kingfisher
+          upstream_branch: master
+          target_branch: master
+          force: true
+          tags: true
