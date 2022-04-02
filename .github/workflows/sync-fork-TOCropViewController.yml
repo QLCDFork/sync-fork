@@ -1,0 +1,22 @@
+name: Sync Fork For TOCropViewController
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      -master
+  schedule:
+    - cron: 0 3 */1 * * # 每天凌晨3点执行
+
+jobs:
+  update_fork:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: TobKed/github-forks-sync-action@master
+        with:
+          github_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+          upstream_repository: TimOliver/TOCropViewController
+          target_repository: QLCDFork/TOCropViewController
+          upstream_branch: main
+          target_branch: main
+          force: true
+          tags: true
