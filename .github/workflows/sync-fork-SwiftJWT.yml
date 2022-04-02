@@ -8,7 +8,7 @@ jobs:
   update_fork:
     runs-on: ubuntu-latest
     steps:
-      - uses: TobKed/github-forks-sync-action@master
+      - uses: QLCDFork/github-forks-sync-action@master
         with:
           github_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
           upstream_repository: AppCLS/SwiftJWT
