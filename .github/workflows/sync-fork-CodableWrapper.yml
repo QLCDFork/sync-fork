@@ -1,0 +1,19 @@
+name: Sync Fork For CodableWrapper
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: 0 3 */1 * * # 每天凌晨3点执行
+
+jobs:
+  update_fork:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: QLCDFork/github-forks-sync-action@master
+        with:
+          github_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+          upstream_repository: winddpan/CodableWrapper
+          target_repository: QLCDFork/CodableWrapper
+          upstream_branch: master
+          target_branch: master
+          force: true
+          tags: true
