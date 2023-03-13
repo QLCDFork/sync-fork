@@ -11,7 +11,7 @@ jobs:
       - uses: QLCDFork/github-forks-sync-action@master
         with:
           github_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
-          upstream_repository: rakuyoMo/ColaCup
+          upstream_repository: RakuyoKit/ColaCup
           target_repository: QLCDFork/ColaCup
           upstream_branch: master
           target_branch: master
