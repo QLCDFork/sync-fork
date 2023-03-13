@@ -11,7 +11,7 @@ jobs:
       - uses: QLCDFork/github-forks-sync-action@master
         with:
           github_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
-          upstream_repository: rakuyoMo/RaAPIWrapper
+          upstream_repository: RakuyoKit/RaAPIWrapper
           target_repository: QLCDFork/RaAPIWrapper
           upstream_branch: main
           target_branch: main
