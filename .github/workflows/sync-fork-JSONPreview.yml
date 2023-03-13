@@ -11,7 +11,7 @@ jobs:
       - uses: QLCDFork/github-forks-sync-action@master
         with:
           github_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
-          upstream_repository: rakuyoMo/JSONPreview
+          upstream_repository: RakuyoKit/JSONPreview
           target_repository: QLCDFork/JSONPreview
           upstream_branch: master
           target_branch: master
