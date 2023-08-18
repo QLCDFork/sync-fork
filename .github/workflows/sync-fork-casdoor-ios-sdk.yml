@@ -1,4 +1,4 @@
-name: Sync Fork For Alamofire
+name: Sync Fork For casdoor-ios-sdk
 on:
   workflow_dispatch:
   schedule:
