@@ -1,0 +1,13 @@
+name: Auto Commit
+on:
+  workflow_dispatch:
+  schedule:
+    # Runs at 12 am UTC
+    - cron: "0 0 * * *"
+
+jobs:
+  auto-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: gautamkrishnar/keepalive-workflow@v1
