@@ -11,5 +11,5 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          ref: some-branch
+          ref: auto_commit
       - uses: gautamkrishnar/keepalive-workflow@v1
